@@ -8,9 +8,8 @@
 }
 
 .app{
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  background-image: url('./assets/banner2.jpg');
+  padding: 35px;
 }
 
 a {
