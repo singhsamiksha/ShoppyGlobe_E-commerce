@@ -6,7 +6,7 @@ function Welcome() {
   return (
     <>
       <div className="welcome_page">
-        <div className="title">
+        <div className="centre-text">
           <h1>Welcome to ShoppyGlobe</h1>
           <p>Your one-stop shop for all your needs!</p>
           <Link to="/products">

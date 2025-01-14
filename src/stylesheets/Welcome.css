@@ -1,0 +1,9 @@
+.welcome_page{
+    margin: 120px;
+}
+
+.centre-text{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
