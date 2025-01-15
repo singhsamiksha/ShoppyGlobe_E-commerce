@@ -45,7 +45,7 @@ const Cart = () => {
   if (!cartItems.length) return <div>Your cart is empty.</div>;
 
   const handlePlaceOrderClick = () => {
-    navigate('/order', { state: { cartItems } });
+    navigate('/checkout', { state: { cartItems } });
   };
 
   return (
