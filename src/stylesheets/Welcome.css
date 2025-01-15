@@ -1,10 +1,19 @@
-.welcome_page{
-    margin: 120px;
+.welcome_page {
+    background-image: url('../assets/banner3.jpg');
+    width: 100vw;
+    height: 553px;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    position: relative; 
 }
 
-.centre-text{
-    display: flex;
-    gap: 30px;
-    flex-direction: column;
-    color: white;
+.button {
+    position: absolute; 
+    right: 360px; 
+    bottom: 120px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }

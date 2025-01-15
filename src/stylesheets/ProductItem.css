@@ -1,5 +1,29 @@
-.product-item{
-    margin: 50px;
-    width: 200px;
-    height: 200px;
+.product-item {
+    flex: 1 1 calc(33.33% - 40px); 
+    max-width: calc(33.33% - 40px); 
+    background-color: white; 
+    height: 450px;
+    box-sizing: border-box; 
+    border: 2px solid #4f2bee; 
+    padding: 40px 10px; 
+    text-align: center; 
+}
+
+.product-item h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.product-item p{
+    font-size: 20px;
+    font-weight: 700px;
+    color: #4f2bee;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 20px;
 }

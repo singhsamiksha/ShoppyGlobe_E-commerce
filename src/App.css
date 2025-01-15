@@ -7,18 +7,18 @@
   font-weight: 400;
 }
 
-.app{
-  background-image: url('./assets/banner2.jpg');
-  padding: 35px;
-}
-
 a {
   font-weight: 500;
-  color: #862bee;
+  color: #4f2bee;
   text-decoration: inherit;
 }
+
 a:hover {
-  color: #646cff;
+  color: #4f2bee; /* Changes the color of the link on hover */
+  text-decoration: underline; /* Adds an underline */
+  display: inline-block; /* Allows the margin-top to work without shifting other elements */
+  transform: translateY(-5px); /* Creates a smooth upward hover effect */
+  transition: transform 0.3s ease, color 0.3s ease; /* Adds smooth animations */
 }
 
 h1 {
@@ -33,7 +33,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #862bee;
+  background-color: #4f2bee;
   cursor: pointer;
   transition: border-color 0.25s;
   color: white;

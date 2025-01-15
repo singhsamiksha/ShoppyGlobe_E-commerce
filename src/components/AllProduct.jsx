@@ -37,6 +37,7 @@ function AllProduct(){
   }
   return(
     <div className='AllProducts'>
+      <h2>All Products</h2>
         <div className='searchBar'>
         <input
             type="text"
@@ -47,7 +48,6 @@ function AllProduct(){
           />
         </div>
         <div className='product-container'>
-            <h2>All Products</h2>
             <div className='products'>
                 {filteredProducts.length > 0 ? (
                     <ProductList products={filteredProducts} />

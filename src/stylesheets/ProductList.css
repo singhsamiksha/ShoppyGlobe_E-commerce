@@ -1,6 +1,8 @@
-.product-list{
+.product-list {
     display: flex;
     flex-wrap: wrap;
-    background-color: white;
-    gap: 100px;
+    background-color: #9685e4;
+    gap: 40px; /* Adjust the gap between items */
+    justify-content: center; /* Optional: centers the items within the container */
+    align-items: stretch; /* Ensures all items stretch to the same height */
 }
