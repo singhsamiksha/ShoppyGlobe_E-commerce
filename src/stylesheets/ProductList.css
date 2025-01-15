@@ -1,0 +1,6 @@
+.product-list{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    gap: 100px;
+}

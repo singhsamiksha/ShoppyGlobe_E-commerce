@@ -46,14 +46,15 @@ function AllProduct(){
             onChange={handleChange}
           />
         </div>
-        <div className='Products'>
+        <div className='product-container'>
             <h2>All Products</h2>
-            {filteredProducts.length > 0 ? (
-                <ProductList products={filteredProducts} />
-            ) : (
-                <p className="no-products">No products found.</p>
-            )}
-
+            <div className='products'>
+                {filteredProducts.length > 0 ? (
+                    <ProductList products={filteredProducts} />
+                ) : (
+                    <p className="no-products">No products found.</p>
+                )}
+            </div>
         </div>
     </div>
   );
