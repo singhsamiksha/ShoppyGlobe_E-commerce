@@ -23,7 +23,7 @@ const ProductItem = ({ product }) => {
       <h3>{product.title}</h3>
       <p>${product.price}</p>
       <div className="buttons">
-        <Link to={`/product/${product.id}`}>View Details</Link>
+        <Link to={`/allproducts/${product.id}`}>View Details</Link>
         <button onClick={handleAddToCart}>Add to Cart</button>
       </div>
       {showPopup && <div className="popup">Product added to cart!</div>}

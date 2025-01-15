@@ -8,6 +8,7 @@ import Welcome from './components/Welcome';
 import AllProduct from './components/AllProduct.jsx';
 import store from './utilies/store.js';
 import Cart from './components/Cart.jsx';
+import ProductDetails from './components/ProductDetail.jsx';
 
 
 const appRouter = createBrowserRouter([
@@ -33,12 +34,23 @@ const appRouter = createBrowserRouter([
         
     },
     {
-        path: "/cart",
+        path: "/",
         element: <App />,
         children: [
             {
                 path: "/cart",
                 element: <Cart/>
+            },
+        ],
+        
+    },
+    {
+        path: "/",
+        element: <App />,
+        children: [
+            {
+                path: "/allproducts/:id",
+                element: <ProductDetails/>
             },
         ],
         
