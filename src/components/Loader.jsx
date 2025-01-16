@@ -1,11 +1,11 @@
 import React from 'react';
-import { DotLoader } from 'react-spinners';
+import { SyncLoader	 } from 'react-spinners';
 import '../stylesheets/Loader.css';
 
 const Loader = () => {
   return (
     <div className="loader-container">
-      <DotLoader color = "Green" size={100} />
+      <SyncLoader	 color = "#7364ff" size={30} />
       <p>Loading...</p>
     </div>
   );

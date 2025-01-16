@@ -16,6 +16,7 @@ const Cart = () => {
     if (savedCart) {
       dispatch({ type: 'SET_CART', payload: JSON.parse(savedCart) });
     }
+    setLoading(false);
   }, [dispatch]);
 
   useEffect(() => {
