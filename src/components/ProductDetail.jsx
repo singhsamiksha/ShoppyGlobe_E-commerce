@@ -50,6 +50,7 @@ const ProductDetails = () => {
 
   return (
     <div className="product-details">
+        <hr></hr>
             <div className="card-header">
                 <div className='product-img'>
                     <img src={product.thumbnail} alt={product.title} />

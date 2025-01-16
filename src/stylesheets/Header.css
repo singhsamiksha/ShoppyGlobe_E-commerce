@@ -1,28 +1,47 @@
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px;
-    margin: 0px 50px ;
-    height: 0;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  margin: 0 50px;
+  height: auto;
 }
 
-.navbar{
-    display: flex;
-    gap: 20px;
-    font-size: 18px;
+/* Logo */
+.logo img {
+  max-width: 100%; /* Ensures the logo scales well */
+  height: auto; /* Maintains aspect ratio */
 }
 
+/* Navbar container */
+.navbar {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
+}
+
+/* Links */
 a {
-    font-weight: 500;
-    color: #4f2bee;
-    text-decoration: inherit;
+  font-weight: 500;
+  color: #4f2bee;
+  text-decoration: inherit;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+  color: #4f2bee; /* Keeps the hover color */
+  text-decoration: underline;
+  transform: translateY(-5px); /* Smooth upward hover effect */
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stacks the header vertically */
+    align-items: center; /* Aligns items to the left */
+    padding: 20px;
+    margin: 0 15px;
   }
-  
-  a:hover {
-    color: #4f2bee; /* Changes the color of the link on hover */
-    text-decoration: underline; /* Adds an underline */
-    display: inline-block; /* Allows the margin-top to work without shifting other elements */
-    transform: translateY(-5px); /* Creates a smooth upward hover effect */
-    transition: transform 0.3s ease, color 0.3s ease; /* Adds smooth animations */
-  }
+
+}
