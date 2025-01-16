@@ -1,33 +1,110 @@
-.cart{
+.cart {
     display: flex;
     flex-direction: column;
+}
+
+.cart h1 {
+    text-align: start;
+    font-size: 30px;
+    margin: 20px 120px;
+    font-weight: 700;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #646cff;
+    margin: 20px 120px;
 }
 
 .item-details {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    gap: 20px; /* Space between the columns */
-    padding: 20px; /* Inner padding */
+    grid-template-columns: 2fr 1fr; 
+    gap: 20px;  
+    margin: 0px 100px;
 }
 
+.distribution {
+    margin: 5px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    font-weight: bold; /* Make the heading bold */
+}
 
-.cart-item,.cart-parent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.price-details h2 {
+    color: rgb(255, 255, 255);
+    margin-top: 10px;   
+     margin-bottom: 10px;
+    width: 100%;
+    padding: 20px 0px;
+    background-color: #646cff;
+}
+
+.cart-item{
     gap: 20px;
-    margin: 10px;
-    background-color: white;
+    margin-bottom: 10px;
+    padding: 5px;
 }
 
-ul{
+.cart-parent{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 50px;
+} 
+
+.cart-item-details {
+    display: flex;
+    justify-content: space-between; /* Equal spacing for child elements */
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+}
+
+.total {
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #ebebeb;
+}
+
+ul {
     list-style: none;
+    padding: 0;
 }
 
-.price-details{
+.price-details {
+    background-color: #7364ff;
+    margin: 0px;
+    display: flex;
+    flex-direction: column; /* Ensure elements stack */
+    justify-content: space-between; /* Equal spacing between items */
+    align-items: center;
+    color: black;
+    padding: 20px; 
+}
+
+.product-name {
+    font-size: 15px;
+}
+
+.cart-item-controls {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: white;
+    gap: 30px;
+}
+
+.Qty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.small-btns {
+    padding: 0px 10px;
 }

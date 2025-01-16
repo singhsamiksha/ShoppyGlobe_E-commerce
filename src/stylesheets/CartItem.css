@@ -1,0 +1,8 @@
+.cart-item-controls{
+    display: flex;
+    gap: 50px;
+}
+
+.Qty-button{
+    padding: 2px;
+}

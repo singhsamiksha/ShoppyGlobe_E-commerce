@@ -32,7 +32,7 @@ const PlaceOrder = () => {
   return (
     <>
       <div className="checkout-page">
-        <div className="card">
+      <div className="card">
           <h2>Shipping Details</h2>
           {formData && (
             <div className='formData'>
@@ -42,11 +42,14 @@ const PlaceOrder = () => {
               <p><strong>Phone : </strong><span>{formData.phoneNumber}</span></p>
             </div>
           )}
-          <button onClick={handleEditAddress}>Edit</button>
+          
         </div>
         <div className="card">
           <h2>Your Order Summary</h2>
-          <button onClick={handleEditBag}>Edit Bag</button>
+          <div className='edit-buttons'>
+              <button onClick={handleEditBag}>Edit Bag</button>
+              <button onClick={handleEditAddress}>Edit Address</button>
+          </div>
           <table>
             <thead>
               <tr>
@@ -66,14 +69,14 @@ const PlaceOrder = () => {
                   </td>
                   <td>{item.quantity || 1}</td>
                   <td>7.17% Off</td>
-                  <td>₹{(item.price * (item.quantity || 1)).toFixed(2)}</td>
+                  <td>${(item.price * (item.quantity || 1)).toFixed(2)}</td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <p>Subtotal: ₹{priceDetails.price}</p>
-          <p>Shipping Charges: ₹{priceDetails.deliveryCharges}</p>
-          <p>Total: ₹{priceDetails.totalAmount}</p>
+          <p>Subtotal: ${priceDetails.price}</p>
+          <p>Shipping Charges: ${priceDetails.deliveryCharges}</p>
+          <p style={{color: "red", fontSize: "25px"}}>Total: ${priceDetails.totalAmount}</p>
         </div>
       </div>
     </>

@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart, removeFromCart, decrementCartItem } from '../utilies/cartActions';
 import PropTypes from 'prop-types';
+import '../stylesheets/CartItem.css';
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -26,9 +27,9 @@ const CartItem = ({ item }) => {
         <p>${(item.price * item.quantity).toFixed(2)}</p>
       </div>
       <div className="cart-item-controls">
-        <button onClick={handleDecrement}>-</button>
+        <button onClick={handleDecrement} className='Qty-button'>-</button>
         <span>{item.quantity}</span>
-        <button onClick={handleIncrement}>+</button>
+        <button onClick={handleIncrement} className='Qty-button'>+</button>
         <button onClick={handleRemove} className="remove">Remove</button>
       </div>
     </div>

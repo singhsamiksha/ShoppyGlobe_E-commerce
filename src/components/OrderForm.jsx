@@ -28,7 +28,6 @@ const OrderForm = ({ onSave }) => {
 
   return (
     <form className="order-form" onSubmit={handleSubmit}>
-      <h2>Delivery Address</h2>
       <input
         type="text"
         name="fullName"

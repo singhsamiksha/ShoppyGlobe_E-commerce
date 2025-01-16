@@ -4,8 +4,6 @@ import { addToCart, removeFromCart, decrementCartItem } from '../utilies/cartAct
 import { useNavigate } from 'react-router-dom';
 import '../stylesheets/Cart.css';
 
-
-// Cart component to display items added to the cart
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -33,7 +31,7 @@ const Cart = () => {
   const calculatePriceDetails = () => {
     const totalItems = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
     const price = cartItems.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
-    const discount = (price * 0.05).toFixed(2); 
+    const discount = (price * 0.05).toFixed(2);
     const deliveryCharges = 50.0;
     const totalAmount = (price - discount + deliveryCharges).toFixed(2);
 
@@ -51,40 +49,50 @@ const Cart = () => {
   return (
     <>
       <div className="cart">
+        <hr className="cart-divider" />
         <h1>Your Cart</h1>
-        <div className='item-details'>
-            <div className='cart-items'>
-                <ul>
-                {cartItems.map((item) => (
-                    
-                        <li key={item.id} className="cart-item">
-                            <div className='cart-parent'>
-                                <div className="cart-item-details">
-                                    <img src={item.thumbnail} alt={item.title} width="50px" height="50px" style={{backgroundColor:'grey'}}/>
-                                    <h3>{item.title}</h3>
-                                </div>
-                                <div className="cart-item-controls">
-                                    <p>Total Price : ${(item.price * item.quantity).toFixed(2)}</p>
-                                    <p>Quantity : </p><span><button onClick={() => handleDecrement(item.id)}>-</button>
-                                    <span>{item.quantity || 1}</span>
-                                    <button onClick={() => handleIncrement(item)}>+</button></span>
-                                </div>
-                                <br></br>
-                            </div>
-                        </li>
-                        
-                ))}
-                </ul>
+        <div className="item-details">
+          <div className="cart-items">
+            <ul>
+              {cartItems.map((item) => (
+                <li key={item.id} className="cart-item">
+                  <div className="cart-parent">
+                    <div className="cart-item-details">
+                      <img src={item.thumbnail} alt={item.title} width="50px" height="50px" style={{ backgroundColor: 'pink' }} />
+                      <h3 className="product-name">{item.title}</h3>
+                    </div>
+                    <div className="cart-item-controls">
+                      <p>Total Price: ${(item.price * item.quantity).toFixed(2)}</p>
+                    </div>
+                    <div className="Qty">
+                        <p>Quantity: </p>
+                        <button  className="small-btns" onClick={() => handleDecrement(item.id)}>-</button>
+                        {item.quantity || 1}
+                        <button className="small-btns" onClick={() => handleIncrement(item)}>+</button>
+                      </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="price-details">
+            <h2>Price Details</h2>
+            <div className="distribution">
+              <p><strong>Price ({priceDetails.totalItems} items):</strong> ${priceDetails.price}</p>
+              <p><strong>Discount:</strong> ${priceDetails.discount}</p>
+              <p><strong>Delivery Charges:</strong> ${priceDetails.deliveryCharges}</p>
             </div>
-            <div className="price-details">
-                <h2>Price Details</h2>
-                <p>Price ({priceDetails.totalItems} items): ${priceDetails.price}</p>
-                <p>Discount: ${priceDetails.discount}</p>
-                <p>Delivery Charges: ${priceDetails.deliveryCharges}</p>
-                <p><strong>Total Amount: ${priceDetails.totalAmount}</strong></p>
-                <p>You will save ${priceDetails.discount} on this order</p>
-                <button className="place-order" onClick={handlePlaceOrderClick}>Place Order</button>
+            <hr className="cart-divider" />
+            <div className="total">
+              <p style={{ fontSize: '30px', color: 'white' }}>
+                <strong>Total Amount: ${priceDetails.totalAmount}</strong>
+              </p>
+              <p style={{ fontSize: '15px', color: 'yellow', fontWeight: '800px' }}>
+                You will save ${priceDetails.discount} on this order
+              </p>
             </div>
+            <button className="place-order" onClick={handlePlaceOrderClick}>Place Order</button>
+          </div>
         </div>
       </div>
     </>

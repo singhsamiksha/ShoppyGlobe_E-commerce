@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import OrderForm from './OrderForm';
+import '../stylesheets/OrderPage.css'
 
 const OrderPage = () => {
   const location = useLocation();
@@ -13,7 +14,7 @@ const OrderPage = () => {
 
   return (
     <div className="order-page">
-      <h1>Order Page</h1>
+      <h1 >Delivery Address</h1>
       <OrderForm onSave={handleSave} />
     </div>
   );

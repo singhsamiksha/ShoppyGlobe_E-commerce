@@ -48,12 +48,26 @@ const appRouter = createBrowserRouter([
     },
     ,
     {
-        path: "/checkout",
-        element: <PlaceOrder />,
+        path: "/",
+        element: <App />,
+        children: [
+            {
+                path: "/checkout",
+                element: <PlaceOrder />,
+            },
+        ],
+        
     },
     {
-        path: "/order",
-        element: <OrderPage />,
+        path: "/",
+        element: <App />,
+        children: [
+            {
+                path: "/order",
+                element: <OrderPage />,
+            },
+        ],
+       
     },
     {
         path: "/",
