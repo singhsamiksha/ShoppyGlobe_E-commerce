@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../utilies/cartActions';
 import '../stylesheets/ProductDetails.css';
+import Loader from './Loader';
 
 // ProductDetails component to display detailed information about a selected product
 const ProductDetails = () => {
   const { id } = useParams();
+  const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
@@ -22,7 +24,9 @@ const ProductDetails = () => {
         setProduct(data);
       } catch (error) {
         setError(error.message);
-      } 
+      } finally {
+        setLoading(false);
+      }
     };
 
     fetchProduct();
@@ -31,6 +35,10 @@ const ProductDetails = () => {
   const handleAddToCart = () => {
     dispatch(addToCart(product));
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   if (error) {
     return <div>Error: {error}</div>;

@@ -3,11 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, removeFromCart, decrementCartItem } from '../utilies/cartActions';
 import { useNavigate } from 'react-router-dom';
 import '../stylesheets/Cart.css';
+import Loader from './Loader';
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const savedCart = localStorage.getItem('cartItems');
@@ -39,6 +41,10 @@ const Cart = () => {
   };
 
   const priceDetails = calculatePriceDetails();
+
+  if (loading) {
+    return <Loader />;
+  }
 
   if (!cartItems.length) return <div>Your cart is empty.</div>;
 

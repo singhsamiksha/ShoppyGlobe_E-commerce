@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import '../stylesheets/AllProduct.css';
 import ProductList from './ProductList';
+import Loader from './Loader';
 
 
 function AllProduct(){
   const [search,setSearch] = useState('');
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     // Fetch products from an API
@@ -18,7 +20,9 @@ function AllProduct(){
         setFilteredProducts(data.products);
       } catch (error) {
         console.error('Error fetching products:', error);
-      } 
+      } finally {
+        setLoading(false); // Set loading to false after fetching
+      }
     };
 
     fetchProducts();
@@ -35,6 +39,11 @@ function AllProduct(){
   function handleChange(e){
     setSearch(e.target.value);
   }
+
+  if (loading) {
+    return <Loader />; // Show loader while loading
+  }
+  
   return(
     <div className='AllProducts'>
       <h2>All Products</h2>

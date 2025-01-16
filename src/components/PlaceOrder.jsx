@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../stylesheets/PlaceOrder.css';
+import Loader from './Loader';
 
 // CheckoutPage component to display the checkout process
 const PlaceOrder = () => {
@@ -8,6 +9,14 @@ const PlaceOrder = () => {
   const navigate = useNavigate();
   const formData = location.state?.formData;
   const cartItems = location.state?.cartItems || [];
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a delay to show the loader
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
 
   const handleEditAddress = () => {
     navigate('/order', { state: { cartItems } });
@@ -28,6 +37,10 @@ const PlaceOrder = () => {
   };
 
   const priceDetails = calculatePriceDetails();
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <>
