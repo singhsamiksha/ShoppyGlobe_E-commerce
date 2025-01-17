@@ -1,11 +1,11 @@
 import React from 'react';
-import { SyncLoader	 } from 'react-spinners';
+import { FadeLoader } from 'react-spinners';
 import '../stylesheets/Loader.css';
 
 const Loader = () => {
   return (
     <div className="loader-container">
-      <SyncLoader	 color = "#7364ff" size={30} />
+      <FadeLoader color = "#4f2bee" size={30} />
       <p>Loading...</p>
     </div>
   );

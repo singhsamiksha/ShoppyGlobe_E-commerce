@@ -15,6 +15,7 @@ const Cart = () => {
     const savedCart = localStorage.getItem('cartItems');
     if (savedCart) {
       dispatch({ type: 'SET_CART', payload: JSON.parse(savedCart) });
+      setLoading(false);
     }
     setLoading(false);
   }, [dispatch]);
@@ -98,7 +99,7 @@ const Cart = () => {
                 You will save ${priceDetails.discount} on this order
               </p>
             </div>
-            <button className="place-order" onClick={handlePlaceOrderClick}>Place Order</button>
+            <button className="place-order" onClick={handlePlaceOrderClick} style={{backgroundColor: "white", color: "#4f2bee"}}>Place Order</button>
           </div>
         </div>
       </div>
