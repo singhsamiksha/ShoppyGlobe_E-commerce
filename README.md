@@ -22,8 +22,8 @@ Ensure you have the following installed:
 
 ## **Installation**
 1. Clone the repository to your local machine:  
-   - git clone <repository-url>
-   - cd <repository-directory>
+   - git clone https://github.com/singhsamiksha/ShoppyGlobe_E-commerce.git
+   - cd ShoppyGlobe_E-commerce
 
 2. Install required dependencies:
    - npm install
