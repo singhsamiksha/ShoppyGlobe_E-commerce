@@ -1,8 +1,49 @@
-# React + Vite
+# **ShoppyGlobe E-commerce Application**  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ShoppyGlobe is a React-based e-commerce platform that allows users to browse, search, and manage products dynamically. The application fetches product data from an API and integrates Redux for state management, providing a seamless shopping experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Features**
+- **Dynamic Product Management**: Fetches and displays product lists and details with error handling.
+- **User-Friendly Navigation**: Includes routes for Home, Product Details, Cart, and Checkout.
+- **Interactive Design**: Add/remove products in the cart, search products, and update quantities easily.
+- **Performance Optimized**: Uses `Suspense` for lazy loading, ensuring faster performance.
+- **Responsive UI**: Mobile-friendly, modern design with reusable components.
+
+---
+
+## **Prerequisites**
+Ensure you have the following installed:
+- **Node.js** (Latest LTS version recommended)
+- **npm** 
+
+---
+
+## **Installation**
+1. Clone the repository to your local machine:  
+   - git clone <repository-url>
+   - cd <repository-directory>
+
+2. Install required dependencies:
+   - npm install
+     
+3. To start the development server:
+   - npm run dev
+  
+---
+
+  
+## **Mock API**
+The application fetches product data from https://dummyjson.com/products
+
+
+---
+
+
+## **Contributing**
+- Contributions, issues, and feature requests are welcome!
+- Feel free to submit a pull request or open an issue to improve the project.
+
+  
+
