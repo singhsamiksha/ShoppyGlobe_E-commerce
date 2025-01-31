@@ -4,15 +4,19 @@ import AppLogo from './AppLogo';
 import { useSelector } from 'react-redux';
 
 function Header() {
+  // Get cart items from Redux store
   const cartItems = useSelector(state => state.cart.cartItems);
 
   return (
     <div className='header'>
+      {/* Logo Section */}
       <div className='logo'>
         <Link to='/' className='nav-link'>
-          <AppLogo width={150} height={70} color='primary.main'/>
+          <AppLogo width={150} height={70} color='primary.main' />
         </Link>
       </div>
+
+      {/* Navigation Bar */}
       <div className='navbar'>
         <Link to='/' className='nav-link'>
           <i className='fa fa-home'></i> Home

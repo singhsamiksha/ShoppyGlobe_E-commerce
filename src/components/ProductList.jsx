@@ -9,24 +9,30 @@ function ProductList() {
   const [search, setSearch] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
 
+  // Retrieve cart items from Redux store
   const cartItems = useSelector(state => state.cart.cartItems);
   const [selectedItems, setSelectedItems] = useState({});
 
   useEffect(() => {
-  
+    // Map cart items to selectedItems state
     const newSelectedItems = {};
     cartItems.forEach(cartItem => {
       newSelectedItems[cartItem.id] = cartItem;
     });
-  
+
     setSelectedItems(newSelectedItems);
+
+    // Store cart items in local storage
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 
   const { products, loading } = useFetchProducts();
 
   useEffect(() => {
-    const newFilteredList = products.filter(product => product.title.toLowerCase().includes(search.toLowerCase()));
+    // Filter products based on search input
+    const newFilteredList = products.filter(product =>
+      product.title.toLowerCase().includes(search.toLowerCase())
+    );
     setFilteredProducts(newFilteredList);
   }, [search, products]);
 
@@ -47,6 +53,7 @@ function ProductList() {
         />
       </div>
 
+      {/* Display filtered products or message if none found */}
       {filteredProducts.length > 0 ? (
         <div className='product-list'>
           {filteredProducts.map(product => (
@@ -56,7 +63,6 @@ function ProductList() {
       ) : (
         <p>No products found.</p>
       )}
-
     </div>
   );
 }

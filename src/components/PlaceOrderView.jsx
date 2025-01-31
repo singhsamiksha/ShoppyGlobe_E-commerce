@@ -25,7 +25,8 @@ const PlaceOrder = () => {
   const handleEditBag = () => {
     navigate('/cart');
   };
-
+  
+  //function to calculate PriceDetails
   const calculatePriceDetails = () => {
     const totalItems = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
     const price = cartItems.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);

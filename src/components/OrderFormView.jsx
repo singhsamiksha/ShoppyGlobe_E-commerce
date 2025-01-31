@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import '../stylesheets/OrderForm.css';
 
 const OrderForm = ({ onSave }) => {
+  // State to manage form input values
   const [formData, setFormData] = useState({
     fullName: '',
     phoneNumber: '',
@@ -16,11 +17,13 @@ const OrderForm = ({ onSave }) => {
     landmark: '',
   });
 
+  // Handle input field changes
   const handleChange = e => {
     const { name, value } = e.target;
     setFormData(prevData => ({ ...prevData, [name]: value }));
   };
 
+  // Handle form submission
   const handleSubmit = e => {
     e.preventDefault();
     onSave(formData);
@@ -28,6 +31,7 @@ const OrderForm = ({ onSave }) => {
 
   return (
     <form className='order-form' onSubmit={handleSubmit}>
+      {/* Input fields for user details */}
       <input
         type='text'
         name='fullName'
@@ -106,11 +110,13 @@ const OrderForm = ({ onSave }) => {
         value={formData.landmark}
         onChange={handleChange}
       />
+      {/* Submit button */}
       <button type='submit'>Save Address</button>
     </form>
   );
 };
 
+// Prop validation
 OrderForm.propTypes = {
   onSave: PropTypes.func.isRequired,
 };
