@@ -19,17 +19,17 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <div className="cart-item">
+    <div className='cart-item'>
       <img src={item.thumbnail} alt={item.title} />
-      <div className="cart-item-details">
+      <div className='cart-item-details'>
         <h3>{item.title}</h3>
         <p>${(item.price * item.quantity).toFixed(2)}</p>
       </div>
-      <div className="cart-item-controls">
-        <button onClick={handleDecrement} className="Qty-button">-</button>
+      <div className='cart-item-controls'>
+        <button onClick={handleDecrement} className='Qty-button'>-</button>
         <span>{item.quantity}</span>
-        <button onClick={handleIncrement} className="Qty-button">+</button>
-        <button onClick={handleRemove} className="remove">Remove</button>
+        <button onClick={handleIncrement} className='Qty-button'>+</button>
+        <button onClick={handleRemove} className='remove'>Remove</button>
       </div>
     </div>
   );
@@ -41,8 +41,8 @@ CartItem.propTypes = {
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     thumbnail: PropTypes.string.isRequired,
-    quantity: PropTypes.number.isRequired
-  }).isRequired
+    quantity: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default CartItem;

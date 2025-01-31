@@ -20,23 +20,23 @@ function AllProduct() {
   }
 
   return(
-    <div className="AllProducts">
+    <div className='AllProducts'>
       <h2>All Products</h2>
-      <div className="searchBar">
+      <div className='searchBar'>
         <input
-          type="text"
-          className="search-input"
-          placeholder="Search Products..."
+          type='text'
+          className='search-input'
+          placeholder='Search Products...'
           value={search}
           onChange={e => setSearch(e.target.value)}
         />
       </div>
-      <div className="product-container">
-        <div className="products">
+      <div className='product-container'>
+        <div className='products'>
           {filteredProducts.length > 0 ? (
             <ProductList products={filteredProducts} />
           ) : (
-            <p className="no-products">No products found.</p>
+            <p className='no-products'>No products found.</p>
           )}
         </div>
       </div>

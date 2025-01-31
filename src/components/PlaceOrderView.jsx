@@ -44,11 +44,11 @@ const PlaceOrder = () => {
 
   return (
     <>
-      <div className="checkout-page">
-        <div className="card">
+      <div className='checkout-page'>
+        <div className='card'>
           <h2>Shipping Details</h2>
           {formData && (
-            <div className="formData">
+            <div className='formData'>
               <p><strong>Name : </strong><span>{formData.fullName}</span></p>
               <p>
                 <strong>Address : </strong>
@@ -67,9 +67,9 @@ const PlaceOrder = () => {
           )}
 
         </div>
-        <div className="card">
+        <div className='card'>
           <h2>Your Order Summary</h2>
-          <div className="edit-buttons">
+          <div className='edit-buttons'>
             <button onClick={handleEditBag}>Edit Bag</button>
             <button onClick={handleEditAddress}>Edit Address</button>
           </div>

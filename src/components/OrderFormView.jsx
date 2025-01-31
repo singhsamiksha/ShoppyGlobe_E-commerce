@@ -13,7 +13,7 @@ const OrderForm = ({ onSave }) => {
     state: '',
     country: '',
     zipcode: '',
-    landmark: ''
+    landmark: '',
   });
 
   const handleChange = e => {
@@ -27,92 +27,92 @@ const OrderForm = ({ onSave }) => {
   };
 
   return (
-    <form className="order-form" onSubmit={handleSubmit}>
+    <form className='order-form' onSubmit={handleSubmit}>
       <input
-        type="text"
-        name="fullName"
-        placeholder="Full Name"
+        type='text'
+        name='fullName'
+        placeholder='Full Name'
         value={formData.fullName}
         onChange={handleChange}
         required
       />
       <input
-        type="text"
-        name="phoneNumber"
-        placeholder="Phone Number"
+        type='text'
+        name='phoneNumber'
+        placeholder='Phone Number'
         value={formData.phoneNumber}
         onChange={handleChange}
         required
       />
       <input
-        type="email"
-        name="email"
-        placeholder="Email"
+        type='email'
+        name='email'
+        placeholder='Email'
         value={formData.email}
         onChange={handleChange}
         required
       />
       <input
-        type="text"
-        name="streetAddress"
-        placeholder="Street Address"
+        type='text'
+        name='streetAddress'
+        placeholder='Street Address'
         value={formData.streetAddress}
         onChange={handleChange}
         required
       />
       <input
-        type="text"
-        name="apartment"
-        placeholder="Apartment/Suite/Floor Number"
+        type='text'
+        name='apartment'
+        placeholder='Apartment/Suite/Floor Number'
         value={formData.apartment}
         onChange={handleChange}
       />
       <input
-        type="text"
-        name="city"
-        placeholder="City/Town"
+        type='text'
+        name='city'
+        placeholder='City/Town'
         value={formData.city}
         onChange={handleChange}
         required
       />
       <input
-        type="text"
-        name="state"
-        placeholder="State"
+        type='text'
+        name='state'
+        placeholder='State'
         value={formData.state}
         onChange={handleChange}
         required
       />
       <input
-        type="text"
-        name="country"
-        placeholder="Country"
+        type='text'
+        name='country'
+        placeholder='Country'
         value={formData.country}
         onChange={handleChange}
         required
       />
       <input
-        type="text"
-        name="zipcode"
-        placeholder="Zipcode"
+        type='text'
+        name='zipcode'
+        placeholder='Zipcode'
         value={formData.zipcode}
         onChange={handleChange}
         required
       />
       <input
-        type="text"
-        name="landmark"
-        placeholder="Landmark"
+        type='text'
+        name='landmark'
+        placeholder='Landmark'
         value={formData.landmark}
         onChange={handleChange}
       />
-      <button type="submit">Save Address</button>
+      <button type='submit'>Save Address</button>
     </form>
   );
 };
 
 OrderForm.propTypes = {
-  onSave: PropTypes.func.isRequired
+  onSave: PropTypes.func.isRequired,
 };
 
 export default OrderForm;

@@ -27,40 +27,40 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="product-details">
+    <div className='product-details'>
       <hr></hr>
-      <div className="card-header">
-        <div className="product-img">
+      <div className='card-header'>
+        <div className='product-img'>
           <img src={product.thumbnail} alt={product.title} />
         </div>
         <hr></hr>
-        <div className="product-info">
+        <div className='product-info'>
           <h3>{product.title}</h3>
           <hr></hr>
-          <p className="price" >
+          <p className='price' >
             <b>Price:</b> ${product.price}
           </p>
-          <p className="discounted-price">
+          <p className='discounted-price'>
             <b>Discounted Price:</b> ${(product.price * (1 - (product.discountPercentage / 100))).toFixed(2)}
           </p>
-          <p className="stock" style={{ color: 'green' }}>
+          <p className='stock' style={{ color: 'green' }}>
             <b>Stock:</b> {product.stock > 0 ? 'In Stock' : 'Low Stock'}
           </p>
-          <p className="brand">
+          <p className='brand'>
             <b>Brand:</b> {product.brand}
           </p>
-          <p className="category">
+          <p className='category'>
             <b>Category:</b> {product.category}
           </p>
-          <p className="description" style={{ textAlign: 'start' }}>
+          <p className='description' style={{ textAlign: 'start' }}>
             <b>Description:</b> {product.description}
           </p>
           <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>
-      <div className="product-details">
+      <div className='product-details'>
         <h3>More Information</h3>
-        <table className="product-table">
+        <table className='product-table'>
           <tbody>
             {product.dimensions && (
               <>

@@ -18,15 +18,15 @@ const ProductItem = ({ product }) => {
   };
 
   return (
-    <div className="product-item">
-      <img src={product.thumbnail} alt={product.title} height="150px" width="150px" style={{ backgroundColor: 'black' }}/>
+    <div className='product-item'>
+      <img src={product.thumbnail} alt={product.title} height='150px' width='150px' style={{ backgroundColor: 'black' }}/>
       <h3>{product.title}</h3>
       <p>${product.price}</p>
-      <div className="buttons">
+      <div className='buttons'>
         <button style={{ backgroundColor: 'yellow' }}><Link to={`/products/${product.id}`}>View Details</Link></button>
         <button onClick={handleAddToCart} style={{ backgroundColor: '#4f2bee' }}>Add to Cart</button>
       </div>
-      {showPopup && <div className="popup">Product added to cart!</div>}
+      {showPopup && <div className='popup'>Product added to cart!</div>}
     </div>
   );
 };
@@ -36,8 +36,8 @@ ProductItem.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    thumbnail: PropTypes.string.isRequired
-  }).isRequired
+    thumbnail: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ProductItem;

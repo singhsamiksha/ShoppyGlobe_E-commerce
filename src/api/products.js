@@ -10,7 +10,7 @@ export const fetchProducts = async params => {
   const { setters } = params || {};
   const {
     setLoading,
-    setProducts
+    setProducts,
   } = setters || {};
 
   try {

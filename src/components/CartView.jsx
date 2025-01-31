@@ -56,42 +56,42 @@ const Cart = () => {
 
   return (
     <>
-      <div className="cart">
-        <hr className="cart-divider" />
+      <div className='cart'>
+        <hr className='cart-divider' />
         <h1>Your Cart</h1>
-        <div className="item-details">
-          <div className="cart-items">
+        <div className='item-details'>
+          <div className='cart-items'>
             <ul>
               {cartItems.map(item => (
-                <li key={item.id} className="cart-item">
-                  <div className="cart-parent">
-                    <div className="cart-item-details">
-                      <img src={item.thumbnail} alt={item.title} width="50px" height="50px" style={{ backgroundColor: 'pink' }} />
-                      <h3 className="product-name">{item.title}</h3>
+                <li key={item.id} className='cart-item'>
+                  <div className='cart-parent'>
+                    <div className='cart-item-details'>
+                      <img src={item.thumbnail} alt={item.title} width='50px' height='50px' style={{ backgroundColor: 'pink' }} />
+                      <h3 className='product-name'>{item.title}</h3>
                     </div>
-                    <div className="cart-item-controls">
+                    <div className='cart-item-controls'>
                       <p>Total Price: ${(item.price * item.quantity).toFixed(2)}</p>
                     </div>
-                    <div className="Qty">
+                    <div className='Qty'>
                       <p>Quantity: </p>
-                      <button  className="small-btns" onClick={() => handleDecrement(item.id)}>-</button>
+                      <button  className='small-btns' onClick={() => handleDecrement(item.id)}>-</button>
                       {item.quantity || 1}
-                      <button className="small-btns" onClick={() => handleIncrement(item)}>+</button>
+                      <button className='small-btns' onClick={() => handleIncrement(item)}>+</button>
                     </div>
                   </div>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="price-details">
+          <div className='price-details'>
             <h2>Price Details</h2>
-            <div className="distribution">
+            <div className='distribution'>
               <p><strong>Price ({priceDetails.totalItems} items):</strong> ${priceDetails.price}</p>
               <p><strong>Discount:</strong> ${priceDetails.discount}</p>
               <p><strong>Delivery Charges:</strong> ${priceDetails.deliveryCharges}</p>
             </div>
-            <hr className="cart-divider" />
-            <div className="total">
+            <hr className='cart-divider' />
+            <div className='total'>
               <p style={{ fontSize: '30px', color: 'white' }}>
                 <strong>Total Amount: ${priceDetails.totalAmount}</strong>
               </p>
@@ -99,7 +99,7 @@ const Cart = () => {
                 You will save ${priceDetails.discount} on this order
               </p>
             </div>
-            <button className="place-order" onClick={handlePlaceOrderClick} style={{ backgroundColor: 'white', color: '#4f2bee' }}>Place Order</button>
+            <button className='place-order' onClick={handlePlaceOrderClick} style={{ backgroundColor: 'white', color: '#4f2bee' }}>Place Order</button>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 const initialState = {
-  cartItems: JSON.parse(localStorage.getItem('cartItems')) || []
+  cartItems: JSON.parse(localStorage.getItem('cartItems')) || [],
 };
 
 const cartReducer = (state = initialState, action) => {
@@ -16,7 +16,7 @@ const cartReducer = (state = initialState, action) => {
       localStorage.setItem('cartItems', JSON.stringify(newCartItems));
       return {
         ...state,
-        cartItems: newCartItems
+        cartItems: newCartItems,
       };
     }
     case 'REMOVE_FROM_CART':
@@ -25,7 +25,7 @@ const cartReducer = (state = initialState, action) => {
       localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
       return {
         ...state,
-        cartItems: updatedCartItems
+        cartItems: updatedCartItems,
       };
     }
     case 'DECREMENT_CART_ITEM':
@@ -36,13 +36,13 @@ const cartReducer = (state = initialState, action) => {
       localStorage.setItem('cartItems', JSON.stringify(decrementedCartItems));
       return {
         ...state,
-        cartItems: decrementedCartItems
+        cartItems: decrementedCartItems,
       };
     }
     case 'SET_CART':
       return {
         ...state,
-        cartItems: action.payload
+        cartItems: action.payload,
       };
     default:
       return state;

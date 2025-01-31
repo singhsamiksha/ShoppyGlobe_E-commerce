@@ -15,8 +15,8 @@ const useProductDetails = () => {
       setters: {
         setLoading,
         setProduct,
-        setError
-      }
+        setError,
+      },
     });
   }, [id]);
 

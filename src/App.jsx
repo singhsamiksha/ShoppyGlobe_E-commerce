@@ -20,7 +20,7 @@ const AppPage = ({ children }) => (
 );
 
 AppPage.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 const appRoutes = [
@@ -32,11 +32,11 @@ const appRoutes = [
   { path: '/cart', element: <AppPage><Cart /> </AppPage> },
   { path: '/checkout', element: <AppPage><PlaceOrder /> </AppPage> },
   { path: '/order', element: <AppPage><OrderPage /> </AppPage> },
-  { path: '*', element: <AppPage><NotFound /></AppPage> }
+  { path: '*', element: <AppPage><NotFound /></AppPage> },
 ];
 
 const App = () => (
-  <div className="app">
+  <div className='app'>
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>

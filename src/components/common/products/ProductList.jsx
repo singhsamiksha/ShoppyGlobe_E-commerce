@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../../../stylesheets/ProductList.css';
 
 const ProductList = ({ products }) => (
-  <div className="product-list">
+  <div className='product-list'>
     {products.map(product => (
       <ProductItem key={product.id} product={product} />
     ))}
@@ -16,9 +16,9 @@ ProductList.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-      thumbnail: PropTypes.string.isRequired
+      thumbnail: PropTypes.string.isRequired,
     })
-  ).isRequired
+  ).isRequired,
 };
 
 export default ProductList;

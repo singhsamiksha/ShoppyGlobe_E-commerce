@@ -7,8 +7,8 @@ export default {
     'no-empty': [
       'error',
       {
-        allowEmptyCatch: true
-      }
+        allowEmptyCatch: true,
+      },
     ],
     'no-extra-semi': 'error',
     'no-irregular-whitespace': 'error',
@@ -16,35 +16,35 @@ export default {
     'consistent-return': 'error',
     curly: [
       'error',
-      'multi-line'
+      'multi-line',
     ],
     eqeqeq: [
       'error',
       'always',
       {
-        null: 'ignore'
-      }
+        null: 'ignore',
+      },
     ],
     'no-alert': 'error',
     'no-caller': 'error',
     'no-else-return': [
       'error',
       {
-        allowElseIf: false
-      }
+        allowElseIf: false,
+      },
     ],
     'no-eval': 'error',
     'no-implied-eval': 'error',
     'no-invalid-this': 'error',
     'no-return-assign': [
       'error',
-      'always'
+      'always',
     ],
     'no-unused-expressions': [
       'error',
       {
-        allowShortCircuit: true
-      }
+        allowShortCircuit: true,
+      },
     ],
     'no-useless-concat': 'error',
     'no-shadow': 'error',
@@ -52,106 +52,109 @@ export default {
     'no-unused-vars': [
       'error',
       {
-        argsIgnorePattern: '^_'
-      }
+        argsIgnorePattern: '^_',
+      },
     ],
     'array-bracket-spacing': [
       'error',
-      'never'
+      'never',
     ],
     'block-spacing': [
       'error',
-      'always'
+      'always',
     ],
-    'comma-dangle': [
-      'error',
-      'never'
-    ],
+    'comma-dangle': ['error', {
+      arrays: 'always-multiline',
+      objects: 'always-multiline',
+      imports: 'always-multiline',
+      exports: 'always-multiline',
+      functions: 'never',
+    }],
     'comma-spacing': [
       'error',
       {
         before: false,
-        after: true
-      }
+        after: true,
+      },
     ],
     'eol-last': [
       'error',
-      'always'
+      'always',
     ],
     'func-call-spacing': [
       'error',
-      'never'
+      'never',
     ],
     indent: [
       'error',
       2,
       {
-        SwitchCase: 1
-      }
+        SwitchCase: 1,
+      },
     ],
     'jsx-quotes': [
       'error',
-      'prefer-double'
+      'prefer-single',
     ],
     'key-spacing': [
       'error',
       {
         beforeColon: false,
-        afterColon: true
-      }
+        afterColon: true,
+      },
     ],
     'linebreak-style': [
       'error',
-      'unix'
+      'unix',
     ],
     'max-len': [
       'error',
       {
         code: 180,
-        ignoreComments: true
-      }
+        ignoreComments: true,
+      },
     ],
     'new-cap': [
       'error',
       {
-        newIsCap: true
-      }
+        newIsCap: true,
+      },
     ],
     'no-mixed-operators': 'error',
     'no-multiple-empty-lines': [
       'error',
       {
         max: 1,
-        maxEOF: 1
-      }
+        maxEOF: 1,
+      },
     ],
     'no-trailing-spaces': 'error',
     'object-curly-spacing': [
       'error',
-      'always'
+      'always',
     ],
     'quote-props': [
       'error',
-      'as-needed'
+      'as-needed',
     ],
     quotes: [
       'error',
       'single',
       {
-        avoidEscape: true
-      }
+        avoidEscape: true,
+      },
     ],
     semi: [
       'error',
-      'always'
+      'always',
     ],
     'space-before-blocks': [
       'error',
-      'always'
+      'always',
     ],
     'space-before-function-paren': [
       'error',
-      'never'
+      'never',
     ],
     'space-infix-ops': 'error',
     'spaced-comment': [
@@ -159,25 +162,25 @@ export default {
       'always',
       {
         markers: [
-          '/'
-        ]
-      }
+          '/',
+        ],
+      },
     ],
     'arrow-body-style': [
       'error',
-      'as-needed'
+      'as-needed',
     ],
     'arrow-parens': [
       'error',
-      'as-needed'
+      'as-needed',
     ],
     'no-var': 'error',
     'prefer-const': [
       'error',
       {
-        destructuring: 'all'
-      }
+        destructuring: 'all',
+      },
     ],
-    'prefer-template': 'error'
-  }
+    'prefer-template': 'error',
+  },
 };

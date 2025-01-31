@@ -9,8 +9,8 @@ const useFetchProducts = () => {
     fetchProducts({
       setters: {
         setLoading,
-        setProducts
-      }
+        setProducts,
+      },
     });
   }, []);
 

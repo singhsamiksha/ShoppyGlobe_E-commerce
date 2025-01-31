@@ -12,7 +12,7 @@ const OrderPage = () => {
   };
 
   return (
-    <div className="order-page">
+    <div className='order-page'>
       <h1 >Delivery Address</h1>
       <OrderForm onSave={handleSave} />
     </div>
