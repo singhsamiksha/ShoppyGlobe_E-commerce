@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import '../stylesheets/OrderForm.css';
 
@@ -13,15 +13,15 @@ const OrderForm = ({ onSave }) => {
     state: '',
     country: '',
     zipcode: '',
-    landmark: '',
+    landmark: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setFormData(prevData => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     onSave(formData);
   };
@@ -112,7 +112,7 @@ const OrderForm = ({ onSave }) => {
 };
 
 OrderForm.propTypes = {
-  onSave: PropTypes.func.isRequired,
+  onSave: PropTypes.func.isRequired
 };
 
 export default OrderForm;

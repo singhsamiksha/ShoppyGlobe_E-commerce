@@ -1,17 +1,14 @@
-import React from 'react';
 import ProductItem from './ProductItem';
 import PropTypes from 'prop-types';
 import '../../../stylesheets/ProductList.css';
 
-const ProductList = ({ products }) => {
-  return (
-    <div className="product-list">
-      {products.map((product) => (
-        <ProductItem key={product.id} product={product} />
-      ))}
-    </div>
-  );
-};
+const ProductList = ({ products }) => (
+  <div className="product-list">
+    {products.map(product => (
+      <ProductItem key={product.id} product={product} />
+    ))}
+  </div>
+);
 
 ProductList.propTypes = {
   products: PropTypes.arrayOf(
@@ -19,9 +16,9 @@ ProductList.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-      thumbnail: PropTypes.string.isRequired,
+      thumbnail: PropTypes.string.isRequired
     })
-  ).isRequired,
+  ).isRequired
 };
 
 export default ProductList;

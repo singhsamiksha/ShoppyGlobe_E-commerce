@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../stylesheets/PlaceOrder.css';
 import Loader from './common/Loader';
@@ -28,7 +28,7 @@ const PlaceOrder = () => {
 
   const calculatePriceDetails = () => {
     const totalItems = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
-    const price = cartItems.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
+    const price = cartItems.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
     const discount = (price * 0.05).toFixed(2); // Assuming 5% discount
     const deliveryCharges = 50.0;
     const totalAmount = (price - discount + deliveryCharges).toFixed(2);
@@ -45,23 +45,33 @@ const PlaceOrder = () => {
   return (
     <>
       <div className="checkout-page">
-      <div className="card">
+        <div className="card">
           <h2>Shipping Details</h2>
           {formData && (
-            <div className='formData'>
+            <div className="formData">
               <p><strong>Name : </strong><span>{formData.fullName}</span></p>
-              <p><strong>Address : </strong><span>{formData.streetAddress}, {formData.apartment}, {formData.city}, {formData.state}, {formData.zipcode}, {formData.country}</span></p>
+              <p>
+                <strong>Address : </strong>
+                <span>
+                  {formData.streetAddress},
+                  {formData.apartment},
+                  {formData.city},
+                  {formData.state},
+                  {formData.zipcode},
+                  {formData.country}
+                </span>
+              </p>
               <p><strong>Email : </strong><span>{formData.email}</span></p>
               <p><strong>Phone : </strong><span>{formData.phoneNumber}</span></p>
             </div>
           )}
-          
+
         </div>
         <div className="card">
           <h2>Your Order Summary</h2>
-          <div className='edit-buttons'>
-              <button onClick={handleEditBag}>Edit Bag</button>
-              <button onClick={handleEditAddress}>Edit Address</button>
+          <div className="edit-buttons">
+            <button onClick={handleEditBag}>Edit Bag</button>
+            <button onClick={handleEditAddress}>Edit Address</button>
           </div>
           <table>
             <thead>
@@ -73,7 +83,7 @@ const PlaceOrder = () => {
               </tr>
             </thead>
             <tbody>
-              {cartItems.map((item) => (
+              {cartItems.map(item => (
                 <tr key={item.id}>
                   <td>
                     <img src={item.thumbnail} alt={item.title} />
@@ -89,7 +99,7 @@ const PlaceOrder = () => {
           </table>
           <p>Subtotal: ${priceDetails.price}</p>
           <p>Shipping Charges: ${priceDetails.deliveryCharges}</p>
-          <p style={{color: "red", fontSize: "25px"}}>Total: ${priceDetails.totalAmount}</p>
+          <p style={{ color: 'red', fontSize: '25px' }}>Total: ${priceDetails.totalAmount}</p>
         </div>
       </div>
     </>

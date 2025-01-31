@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart, removeFromCart, decrementCartItem } from '../utilies/cartActions';
+import { addToCart, decrementCartItem } from '../utilies/cartActions';
 import { useNavigate } from 'react-router-dom';
 import '../stylesheets/Cart.css';
 import Loader from './common/Loader';
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.cartItems);
+  const cartItems = useSelector(state => state.cart.cartItems);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
 
@@ -24,17 +24,17 @@ const Cart = () => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const handleIncrement = (item) => {
+  const handleIncrement = item => {
     dispatch(addToCart(item));
   };
 
-  const handleDecrement = (id) => {
+  const handleDecrement = id => {
     dispatch(decrementCartItem(id));
   };
 
   const calculatePriceDetails = () => {
     const totalItems = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
-    const price = cartItems.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
+    const price = cartItems.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
     const discount = (price * 0.05).toFixed(2);
     const deliveryCharges = 50.0;
     const totalAmount = (price - discount + deliveryCharges).toFixed(2);
@@ -62,7 +62,7 @@ const Cart = () => {
         <div className="item-details">
           <div className="cart-items">
             <ul>
-              {cartItems.map((item) => (
+              {cartItems.map(item => (
                 <li key={item.id} className="cart-item">
                   <div className="cart-parent">
                     <div className="cart-item-details">
@@ -73,11 +73,11 @@ const Cart = () => {
                       <p>Total Price: ${(item.price * item.quantity).toFixed(2)}</p>
                     </div>
                     <div className="Qty">
-                        <p>Quantity: </p>
-                        <button  className="small-btns" onClick={() => handleDecrement(item.id)}>-</button>
-                        {item.quantity || 1}
-                        <button className="small-btns" onClick={() => handleIncrement(item)}>+</button>
-                      </div>
+                      <p>Quantity: </p>
+                      <button  className="small-btns" onClick={() => handleDecrement(item.id)}>-</button>
+                      {item.quantity || 1}
+                      <button className="small-btns" onClick={() => handleIncrement(item)}>+</button>
+                    </div>
                   </div>
                 </li>
               ))}
@@ -99,7 +99,7 @@ const Cart = () => {
                 You will save ${priceDetails.discount} on this order
               </p>
             </div>
-            <button className="place-order" onClick={handlePlaceOrderClick} style={{backgroundColor: "white", color: "#4f2bee"}}>Place Order</button>
+            <button className="place-order" onClick={handlePlaceOrderClick} style={{ backgroundColor: 'white', color: '#4f2bee' }}>Place Order</button>
           </div>
         </div>
       </div>

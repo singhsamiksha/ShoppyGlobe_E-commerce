@@ -26,9 +26,9 @@ const CartItem = ({ item }) => {
         <p>${(item.price * item.quantity).toFixed(2)}</p>
       </div>
       <div className="cart-item-controls">
-        <button onClick={handleDecrement} className='Qty-button'>-</button>
+        <button onClick={handleDecrement} className="Qty-button">-</button>
         <span>{item.quantity}</span>
-        <button onClick={handleIncrement} className='Qty-button'>+</button>
+        <button onClick={handleIncrement} className="Qty-button">+</button>
         <button onClick={handleRemove} className="remove">Remove</button>
       </div>
     </div>
@@ -41,8 +41,8 @@ CartItem.propTypes = {
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     thumbnail: PropTypes.string.isRequired,
-    quantity: PropTypes.number.isRequired,
-  }).isRequired,
+    quantity: PropTypes.number.isRequired
+  }).isRequired
 };
 
 export default CartItem;

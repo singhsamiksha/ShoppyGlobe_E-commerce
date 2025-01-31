@@ -5,12 +5,12 @@ const useFetchProducts = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchProducts = async() => {
       try {
         const response = await fetch('https://dummyjson.com/products');
         const data = await response.json();
         setProducts(data.products);
-      } catch (err) {
+      } catch {
         setError('Failed to fetch products');
       }
     };

@@ -20,20 +20,20 @@ const AppPage = ({ children }) => (
 );
 
 AppPage.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 const appRoutes = [
-  { path: "/", element: <AppPage><Welcome /></AppPage> },
+  { path: '/', element: <AppPage><Welcome /></AppPage> },
 
-  { path: "/products", element: <AppPage><Product /> </AppPage> },
-  { path: "/products/:id", element: <AppPage><ProductDetails /> </AppPage> },
+  { path: '/products', element: <AppPage><Product /> </AppPage> },
+  { path: '/products/:id', element: <AppPage><ProductDetails /> </AppPage> },
 
-  { path: "/cart", element: <AppPage><Cart /> </AppPage> },
-  { path: "/checkout", element: <AppPage><PlaceOrder /> </AppPage>, },
-  { path: "/order", element: <AppPage><OrderPage /> </AppPage> },
-  { path: "*", element:  <AppPage><NotFound /></AppPage> }
-]
+  { path: '/cart', element: <AppPage><Cart /> </AppPage> },
+  { path: '/checkout', element: <AppPage><PlaceOrder /> </AppPage> },
+  { path: '/order', element: <AppPage><OrderPage /> </AppPage> },
+  { path: '*', element: <AppPage><NotFound /></AppPage> }
+];
 
 const App = () => (
   <div className="app">
