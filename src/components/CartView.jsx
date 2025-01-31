@@ -4,6 +4,7 @@ import { addToCart, decrementCartItem } from '../utilies/cartActions';
 import { useNavigate } from 'react-router-dom';
 import '../stylesheets/Cart.css';
 import Loader from './common/Loader';
+import CartItem from './common/carts/CartItem';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -56,9 +57,9 @@ const Cart = () => {
 
   return (
     <>
-      <div className='cart'>
+      <div className='app-container cart'>
+        <h1 className='view-header'>Your Cart</h1>
         <hr className='cart-divider' />
-        <h1>Your Cart</h1>
         <div className='item-details'>
           <div className='cart-items'>
             <ul>
@@ -66,15 +67,15 @@ const Cart = () => {
                 <li key={item.id} className='cart-item'>
                   <div className='cart-parent'>
                     <div className='cart-item-details'>
-                      <img src={item.thumbnail} alt={item.title} width='50px' height='50px' style={{ backgroundColor: 'pink' }} />
+                      <img src={item.thumbnail} alt={item.title} width='50px' height='50px' className='cart-item-image' />
                       <h3 className='product-name'>{item.title}</h3>
                     </div>
                     <div className='cart-item-controls'>
-                      <p>Total Price: ${(item.price * item.quantity).toFixed(2)}</p>
+                      <p className='total-price'>Total Price: ${(item.price * item.quantity).toFixed(2)}</p>
                     </div>
-                    <div className='Qty'>
+                    <div className='qty'>
                       <p>Quantity: </p>
-                      <button  className='small-btns' onClick={() => handleDecrement(item.id)}>-</button>
+                      <button className='small-btns' onClick={() => handleDecrement(item.id)}>-</button>
                       {item.quantity || 1}
                       <button className='small-btns' onClick={() => handleIncrement(item)}>+</button>
                     </div>
@@ -83,24 +84,28 @@ const Cart = () => {
               ))}
             </ul>
           </div>
+
           <div className='price-details'>
             <h2>Price Details</h2>
             <div className='distribution'>
-              <p><strong>Price ({priceDetails.totalItems} items):</strong> ${priceDetails.price}</p>
-              <p><strong>Discount:</strong> ${priceDetails.discount}</p>
-              <p><strong>Delivery Charges:</strong> ${priceDetails.deliveryCharges}</p>
+              <p><strong>Price ({priceDetails.totalItems} items):</strong> <span className='amount'>${priceDetails.price}</span></p>
+              <p><strong>Discount:</strong> <span className='discount'>-${priceDetails.discount}</span></p>
+              <p><strong>Delivery Charges:</strong> <span className='delivery-charges'>${priceDetails.deliveryCharges}</span></p>
             </div>
             <hr className='cart-divider' />
             <div className='total'>
-              <p style={{ fontSize: '30px', color: 'white' }}>
-                <strong>Total Amount: ${priceDetails.totalAmount}</strong>
+              <p className='total-amount'>
+                <strong>Total Amount: <span className='total-price'>${priceDetails.totalAmount}</span></strong>
               </p>
-              <p style={{ fontSize: '15px', color: 'yellow', fontWeight: '800px' }}>
-                You will save ${priceDetails.discount} on this order
+              <p className='savings'>
+                You will save <span className='discount-amount'>${priceDetails.discount}</span> on this order
               </p>
             </div>
-            <button className='place-order' onClick={handlePlaceOrderClick} style={{ backgroundColor: 'white', color: '#4f2bee' }}>Place Order</button>
+            <button className='place-order' onClick={handlePlaceOrderClick}>
+              Place Order
+            </button>
           </div>
+
         </div>
       </div>
     </>

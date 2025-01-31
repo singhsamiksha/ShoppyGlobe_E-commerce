@@ -20,7 +20,7 @@
 
 .app-container {
   max-height: calc(100vh - 80px);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .app-button,
