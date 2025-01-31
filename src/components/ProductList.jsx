@@ -3,10 +3,23 @@ import '../stylesheets/ProductList.css';
 import Loader from './common/Loader';
 import useFetchProducts from '../hooks/ProductsHook';
 import ProductItem from './common/products/ProductItem';
+import { useSelector } from 'react-redux';
 
 function ProductList() {
   const [search, setSearch] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
+
+  const cartItems = useSelector(state => state.cart.cartItems);
+  const [selectedItems, setSelectedItems] = useState({});
+
+  useEffect(() => {
+    const newSelectedItems = {};
+    cartItems.forEach(cartItem => {
+      newSelectedItems[cartItem.id] = cartItem;
+    });
+    setSelectedItems(newSelectedItems);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const { products, loading } = useFetchProducts();
 
@@ -35,7 +48,7 @@ function ProductList() {
       {filteredProducts.length > 0 ? (
         <div className='product-list'>
           {filteredProducts.map(product => (
-            <ProductItem key={product.id} product={product} />
+            <ProductItem key={product.id} product={product} isSelected={!!selectedItems[product.id]} />
           ))}
         </div>
       ) : (

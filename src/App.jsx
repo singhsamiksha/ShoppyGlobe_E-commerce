@@ -36,6 +36,7 @@ const appRoutes = [
 ];
 
 const App = () => (
+
   <div className='app'>
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
