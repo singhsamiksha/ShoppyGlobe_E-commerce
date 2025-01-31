@@ -1,8 +1,8 @@
 :root {
-  --primary-bg: #4f2bee;
   --primary-bg-hover: #3c1bb3;
   --primary-text: #FFFFFF;
-
+  
+  --primary-bg: #4f2bee;
   --secondary-bg: #f39c12;
   --secondary-bg-hover: #e67e22;
 
@@ -81,6 +81,13 @@
   background-color: var(--primary-text);
   color: var(--secondary-bg);
   outline: 4px auto var(--secondary-bg-hover);
+}
+
+.danger-button:focus,
+.danger-button:focus-visible {
+  background-color: var(--primary-text);
+  color: var(--danger-bg);
+  outline: 4px auto var(--danger-bg-hover);
 }
 
 .text-center {

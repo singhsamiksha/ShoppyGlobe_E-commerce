@@ -97,9 +97,11 @@ const PlaceOrder = () => {
               ))}
             </tbody>
           </table>
-          <p>Subtotal: ${priceDetails.price}</p>
-          <p>Shipping Charges: ${priceDetails.deliveryCharges}</p>
-          <p style={{ color: 'red', fontSize: '25px' }}>Total: ${priceDetails.totalAmount}</p>
+          <div className='total-section'>
+            <p>Subtotal: ${priceDetails.price}</p>
+            <p>Shipping Charges: ${priceDetails.deliveryCharges}</p>
+            <p style={{ color: 'red', fontSize: '25px', marginTop: 20 }}>Total: ${priceDetails.totalAmount}</p>
+          </div>
         </div>
       </div>
     </>

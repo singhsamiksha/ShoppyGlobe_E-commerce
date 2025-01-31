@@ -25,14 +25,6 @@ const Cart = () => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
 
-  const handleIncrement = item => {
-    dispatch(addToCart(item));
-  };
-
-  const handleDecrement = id => {
-    dispatch(decrementCartItem(id));
-  };
-
   const calculatePriceDetails = () => {
     const totalItems = cartItems.reduce((sum, item) => sum + (item.quantity || 1), 0);
     const price = cartItems.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
@@ -65,21 +57,7 @@ const Cart = () => {
             <ul>
               {cartItems.map(item => (
                 <li key={item.id} className='cart-item'>
-                  <div className='cart-parent'>
-                    <div className='cart-item-details'>
-                      <img src={item.thumbnail} alt={item.title} width='50px' height='50px' className='cart-item-image' />
-                      <h3 className='product-name'>{item.title}</h3>
-                    </div>
-                    <div className='cart-item-controls'>
-                      <p className='total-price'>Total Price: ${(item.price * item.quantity).toFixed(2)}</p>
-                    </div>
-                    <div className='qty'>
-                      <p>Quantity: </p>
-                      <button className='small-btns' onClick={() => handleDecrement(item.id)}>-</button>
-                      {item.quantity || 1}
-                      <button className='small-btns' onClick={() => handleIncrement(item)}>+</button>
-                    </div>
-                  </div>
+                  <CartItem item={item}/>
                 </li>
               ))}
             </ul>
