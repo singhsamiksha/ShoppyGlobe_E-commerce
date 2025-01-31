@@ -1,47 +1,60 @@
 .product-item {
-    flex: 1 1 calc(33.33% - 40px); 
-    max-width: calc(33.33% - 40px); 
-    background-color: white; 
-    height: 380px;
-    box-sizing: border-box; 
-    border: 2px solid #4f2bee; 
-    padding: 40px 10px; 
-    text-align: center; 
+  flex: 1 1 calc(33.33% - 40px);
+  max-width: calc(33.33% - 40px);
+  background-color: white;
+  height: 380px;
+  box-sizing: border-box;
+  border: 1px solid #CCC;
+  border-radius: 5px;;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+  padding: 40px 10px;
+  text-align: center;
 }
 
-.product-item h3{
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.product-item h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.product-item p{
-    font-size: 20px;
-    font-weight: 700px;
-    color: #4f2bee;
+.product-item p {
+  font-size: 20px;
+  font-weight: 700px;
+  color: var(--primary-bg);
 }
 
-.buttons{
-    display: flex;
-    justify-content: space-around;
-    margin: 10px 20px;
+.prodcut-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 20px;
 }
-  
-  /* Responsive Design */
-  @media (max-width: 1180px) { /* Corrected syntax: added 'px' to max-width value */
-    .product-item {
-      flex: 1 1 100%; /* Allows the product items to stack vertically */
-      max-width: 100%; /* Full width on smaller screens */
-      margin: 20px 50px;
-      justify-content: center;
-      height: auto;
-    }
-  
-    .buttons {
-      flex-direction: column; /* Stack buttons vertically */
-      align-items: center; /* Center align buttons */
-      gap: 10px; /* Add spacing between buttons */
-    }
+
+.prodcut-buttons > .secondary-button > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1180px) {
+
+  /* Corrected syntax: added 'px' to max-width value */
+  .product-item {
+    flex: 1 1 100%;
+    /* Allows the product items to stack vertically */
+    max-width: 100%;
+    /* Full width on smaller screens */
+    margin: 20px 50px;
+    justify-content: center;
+    height: auto;
   }
-  
+
+  .buttons {
+    flex-direction: column;
+    /* Stack buttons vertically */
+    align-items: center;
+    /* Center align buttons */
+    gap: 10px;
+    /* Add spacing between buttons */
+  }
+}

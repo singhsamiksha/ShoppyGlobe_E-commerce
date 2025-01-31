@@ -19,12 +19,12 @@ const ProductItem = ({ product }) => {
 
   return (
     <div className='product-item'>
-      <img src={product.thumbnail} alt={product.title} height='150px' width='150px' style={{ backgroundColor: 'black' }}/>
+      <img src={product.thumbnail} alt={product.title} height='150px' width='150px'/>
       <h3>{product.title}</h3>
       <p>${product.price}</p>
-      <div className='buttons'>
-        <button style={{ backgroundColor: 'yellow' }}><Link to={`/products/${product.id}`}>View Details</Link></button>
-        <button onClick={handleAddToCart} style={{ backgroundColor: '#4f2bee' }}>Add to Cart</button>
+      <div className='prodcut-buttons'>
+        <button className='secondary-button'><Link to={`/products/${product.id}`}>View Details</Link></button>
+        <button className='app-button' onClick={handleAddToCart}>Add to Cart</button>
       </div>
       {showPopup && <div className='popup'>Product added to cart!</div>}
     </div>

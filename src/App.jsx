@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Header from './components/common/Header';
 
 const Welcome = lazy(() => import('./components/Welcome'));
-const Product = lazy(() => import('./components/ProductView'));
+const ProductList = lazy(() => import('./components/ProductList'));
 const ProductDetails = lazy(() => import('./components/common/products/ProductDetail'));
 const Cart = lazy(() => import('./components/CartView'));
 const PlaceOrder = lazy(() => import('./components/PlaceOrderView'));
@@ -26,7 +26,7 @@ AppPage.propTypes = {
 const appRoutes = [
   { path: '/', element: <AppPage><Welcome /></AppPage> },
 
-  { path: '/products', element: <AppPage><Product /> </AppPage> },
+  { path: '/products', element: <AppPage><ProductList /> </AppPage> },
   { path: '/products/:id', element: <AppPage><ProductDetails /> </AppPage> },
 
   { path: '/cart', element: <AppPage><Cart /> </AppPage> },

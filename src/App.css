@@ -2,6 +2,9 @@
   --primary-bg: #4f2bee;
   --primary-bg-hover: #3c1bb3;
   --primary-text: #FFFFFF;
+
+  --secondary-bg: #f39c12;
+  --secondary-bg-hover: #e67e22;
 }
 
 * {
@@ -12,25 +15,59 @@
   font-weight: 400;
 }
 
-.appButton {
+.app-container {
+  max-height: calc(100vh - 80px);
+  overflow-y: scroll;
+}
+
+.app-button,
+.secondary-button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--primary-bg);
+  border: 2px solid var(--primary-bg);
+
   cursor: pointer;
   transition: border-color 0.25s;
-  color: white;
+  transition: background-color 0.25s ease;
+
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
 }
 
-.appButton:hover {
-  background-color: var(--primary-bg-hover);
-  /* border-color: #646cff; */
+.secondary-button {
+  background-color: var(--secondary-bg);
+  color: var(--primary-text);
+  border: 2px solid var(--secondary-bg);
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.app-button:hover {
+  background-color: var(--primary-text);
+  color: var(--primary-bg);
+}
+
+.secondary-button:hover {
+  background-color: var(--primary-text);
+  color: var(--secondary-bg);
+}
+
+.app-button:focus,
+.app-button:focus-visible {
+  background-color: var(--primary-text);
+  color: var(--primary-bg);
+  outline: 4px auto var(--primary-bg-hover);
+}
+
+.secondary-button:focus,
+.secondary-button:focus-visible {
+  background-color: var(--primary-text);
+  color: var(--secondary-bg);
+  outline: 4px auto var(--secondary-bg-hover);
+}
+
+.text-center {
+  text-align: center;
 }

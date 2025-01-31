@@ -7,7 +7,7 @@ function Welcome() {
       <div className='welcome-page'>
         <div className='overlay'>
           <Link to='/products'>
-            <button className='appButton'>Start Shopping</button>
+            <button className='app-button'>Start Shopping</button>
           </Link>
         </div>
       </div>

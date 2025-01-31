@@ -18,7 +18,7 @@
 }
 
 .overlay button {
-  position:absolute;
+  position: absolute;
   bottom: 10%;
   right: 10%;
   background-color: --var(--primary-bg);
@@ -37,17 +37,18 @@
 
 @media screen and (max-width: 768px) {
   .welcome-page {
-    height: 100vh;
-    /* Full screen on smaller devices */
+    height: calc(100vh - 100px);
   }
 
   .overlay {
     background: rgba(0, 0, 0, 0.6);
-    /* Slightly darker for mobile readability */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .button button {
-    font-size: 1.2rem;
+  .overlay button {
+    position: inherit;
     padding: 10px 20px;
   }
 }

@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
-import '../stylesheets/AllProduct.css';
-import ProductList from './common/products/ProductList';
+import '../stylesheets/ProductList.css';
 import Loader from './common/Loader';
 import useFetchProducts from '../hooks/ProductsHook';
+import ProductItem from './common/products/ProductItem';
 
-function AllProduct() {
+function ProductList() {
   const [search, setSearch] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   const { products, loading } = useFetchProducts();
 
   useEffect(() => {
-    const newFilteredList = products.filter(product =>product.title.toLowerCase().includes(search.toLowerCase()));
+    const newFilteredList = products.filter(product => product.title.toLowerCase().includes(search.toLowerCase()));
     setFilteredProducts(newFilteredList);
   }, [search, products]);
 
@@ -19,10 +19,10 @@ function AllProduct() {
     return <Loader />;
   }
 
-  return(
-    <div className='AllProducts'>
-      <h2>All Products</h2>
-      <div className='searchBar'>
+  return (
+    <div className='app-container'>
+      <h2 className='text-center view-header'>All Products</h2>
+      <div className='search-bar'>
         <input
           type='text'
           className='search-input'
@@ -31,17 +31,19 @@ function AllProduct() {
           onChange={e => setSearch(e.target.value)}
         />
       </div>
-      <div className='product-container'>
-        <div className='products'>
-          {filteredProducts.length > 0 ? (
-            <ProductList products={filteredProducts} />
-          ) : (
-            <p className='no-products'>No products found.</p>
-          )}
+
+      {filteredProducts.length > 0 ? (
+        <div className='product-list'>
+          {filteredProducts.map(product => (
+            <ProductItem key={product.id} product={product} />
+          ))}
         </div>
-      </div>
+      ) : (
+        <p>No products found.</p>
+      )}
+
     </div>
   );
 }
 
-export default AllProduct;
+export default ProductList;
