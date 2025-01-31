@@ -30,9 +30,10 @@ const Cart = () => {
     const discount = (price * 0.05).toFixed(2);
     const deliveryCharges = 50.0;
     const totalAmount = (price - discount + deliveryCharges).toFixed(2);
-
+  
     return { totalItems, price: price.toFixed(2), discount, deliveryCharges, totalAmount };
   };
+  
 
   const priceDetails = calculatePriceDetails();
 

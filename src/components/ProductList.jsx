@@ -13,10 +13,12 @@ function ProductList() {
   const [selectedItems, setSelectedItems] = useState({});
 
   useEffect(() => {
+  
     const newSelectedItems = {};
     cartItems.forEach(cartItem => {
       newSelectedItems[cartItem.id] = cartItem;
     });
+  
     setSelectedItems(newSelectedItems);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
