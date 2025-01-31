@@ -1,5 +1,3 @@
-import React from 'react';
-
 const NotFound = () => {
   return <h2 style={{color: 'black'}}>404 - Page Not Found</h2>;
 };

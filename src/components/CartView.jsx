@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, removeFromCart, decrementCartItem } from '../utilies/cartActions';
 import { useNavigate } from 'react-router-dom';
 import '../stylesheets/Cart.css';
-import Loader from './Loader';
+import Loader from './common/Loader';
 
 const Cart = () => {
   const dispatch = useDispatch();

@@ -5,13 +5,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './App.jsx';
 import Welcome from './components/Welcome';
-import AllProduct from './components/AllProduct.jsx';
+import AllProduct from './components/ProductView.jsx';
 import store from './utilies/store.js';
-import Cart from './components/Cart.jsx';
+import Cart from './components/CartView.jsx';
 import ProductDetails from './components/common/products/ProductDetail.jsx';
-import NotFound from './components/NotFound.jsx';
-import PlaceOrder from './components/PlaceOrder.jsx';
-import OrderPage from './components/OrderPage.jsx';
+import NotFound from './components/common/NotFound.jsx';
+import PlaceOrder from './components/PlaceOrderView.jsx';
+import OrderPage from './components/OrderPageView.jsx';
 import 'font-awesome/css/font-awesome.min.css';
 
 const appRoutes = [

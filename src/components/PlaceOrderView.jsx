@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../stylesheets/PlaceOrder.css';
-import Loader from './Loader';
+import Loader from './common/Loader';
 
 // CheckoutPage component to display the checkout process
 const PlaceOrder = () => {

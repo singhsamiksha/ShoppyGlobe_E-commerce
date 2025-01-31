@@ -1,36 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../utilies/cartActions';
 import '../../../stylesheets/ProductDetails.css';
-import Loader from '../../Loader';
+import Loader from '../Loader';
+import useProductDetails from '../../../hooks/ProductDetailsHook';
 
 // ProductDetails component to display detailed information about a selected product
 const ProductDetails = () => {
-  const { id } = useParams();
-  const [loading, setLoading] = useState(true);
-  const [product, setProduct] = useState(null);
-  const [error, setError] = useState(null);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await fetch(`https://dummyjson.com/products/${id}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch product details');
-        }
-        const data = await response.json();
-        setProduct(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProduct();
-  }, [id]);
+  const { product, loading, error } = useProductDetails();
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));

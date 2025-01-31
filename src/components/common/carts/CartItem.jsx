@@ -1,8 +1,7 @@
-import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addToCart, removeFromCart, decrementCartItem } from '../utilies/cartActions';
+import { addToCart, removeFromCart, decrementCartItem } from '../../../utilies/cartActions';
 import PropTypes from 'prop-types';
-import '../stylesheets/CartItem.css';
+import '../../stylesheets/CartItem.css';
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();

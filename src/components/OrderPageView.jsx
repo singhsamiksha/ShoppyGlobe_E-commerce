@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import OrderForm from './OrderForm';
+import OrderForm from './OrderFormView';
 import '../stylesheets/OrderPage.css'
 
 const OrderPage = () => {
