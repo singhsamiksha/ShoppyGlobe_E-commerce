@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../utilies/cartActions';
-import '../stylesheets/ProductDetails.css';
-import Loader from './Loader';
+import { addToCart } from '../../../utilies/cartActions';
+import '../../../stylesheets/ProductDetails.css';
+import Loader from '../../Loader';
 
 // ProductDetails component to display detailed information about a selected product
 const ProductDetails = () => {

@@ -8,78 +8,29 @@ import Welcome from './components/Welcome';
 import AllProduct from './components/AllProduct.jsx';
 import store from './utilies/store.js';
 import Cart from './components/Cart.jsx';
-import ProductDetails from './components/ProductDetail.jsx';
+import ProductDetails from './components/common/products/ProductDetail.jsx';
 import NotFound from './components/NotFound.jsx';
 import PlaceOrder from './components/PlaceOrder.jsx';
 import OrderPage from './components/OrderPage.jsx';
+import 'font-awesome/css/font-awesome.min.css';
+
+const appRoutes = [
+    { path: "/", element: <Welcome />, },
+    { path: "/products", element: <AllProduct /> },
+    { path: "/cart", element: <Cart /> },
+    { path: "/checkout", element: <PlaceOrder />, },
+    { path: "/order", element: <OrderPage />, },
+    { path: "/products/:id", element: <ProductDetails /> },
+]
 
 const appRouter = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
-        children: [
-            {
-                path: "/",
-                element: <Welcome />,
-            },
-        ],
-    },
-    {
-        path: "/",
-        element: <App />,
-        children: [
-            {
-                path: "/allproducts",
-                element: <AllProduct/>
-            },
-        ],
-        
-    },
-    {
-        path: "/",
-        element: <App />,
-        children: [
-            {
-                path: "/cart",
-                element: <Cart/>
-            },
-        ],
-        
-    },
-    ,
-    {
-        path: "/",
-        element: <App />,
-        children: [
-            {
-                path: "/checkout",
-                element: <PlaceOrder />,
-            },
-        ],
-        
-    },
-    {
-        path: "/",
-        element: <App />,
-        children: [
-            {
-                path: "/order",
-                element: <OrderPage />,
-            },
-        ],
-       
-    },
-    {
-        path: "/",
-        element: <App />,
-        children: [
-            {
-                path: "/allproducts/:id",
-                element: <ProductDetails/>
-            },
-        ],
-        
-    },
+    ...appRoutes.map((route) => {
+        return {
+            path: "/",
+            element: <App />,
+            children: [route],
+        };
+    }),
     {
         path: "*",
         element: <NotFound />,
@@ -89,7 +40,7 @@ const appRouter = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
     <StrictMode>
         <Provider store={store}>
-           <RouterProvider router={appRouter} />
+            <RouterProvider router={appRouter} />
         </Provider>
     </StrictMode>
 );

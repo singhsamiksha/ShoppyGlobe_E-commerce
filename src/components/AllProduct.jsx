@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../stylesheets/AllProduct.css';
-import ProductList from './ProductList';
+import ProductList from './common/products/ProductList';
 import Loader from './Loader';
 
 

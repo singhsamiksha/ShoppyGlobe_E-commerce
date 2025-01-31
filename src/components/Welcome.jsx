@@ -7,7 +7,7 @@ function Welcome() {
     <>
       <div className="welcome_page">
         <div className="button">
-          <Link to="/allproducts">
+          <Link to="/products">
             <button>Start Shopping</button>
           </Link>
         </div>

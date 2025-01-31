@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../utilies/cartActions';
+import { addToCart } from '../../../utilies/cartActions';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import '../stylesheets/ProductItem.css';
+import '../../../stylesheets/ProductItem.css';
 
 const ProductItem = ({ product }) => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const ProductItem = ({ product }) => {
       <h3>{product.title}</h3>
       <p>${product.price}</p>
       <div className="buttons">
-        <button style={{backgroundColor: "yellow"}}><Link to={`/allproducts/${product.id}`}>View Details</Link></button>
+        <button style={{backgroundColor: "yellow"}}><Link to={`/products/${product.id}`}>View Details</Link></button>
         <button onClick={handleAddToCart} style={{backgroundColor: "#4f2bee"}}>Add to Cart</button>
       </div>
       {showPopup && <div className="popup">Product added to cart!</div>}
