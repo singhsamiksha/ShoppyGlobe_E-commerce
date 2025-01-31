@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addToCart, decrementCartItem } from '../utilies/cartActions';
 import { useNavigate } from 'react-router-dom';
 import '../stylesheets/Cart.css';
 import Loader from './common/Loader';
