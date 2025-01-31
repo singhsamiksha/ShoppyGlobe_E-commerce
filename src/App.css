@@ -1,3 +1,8 @@
+:root {
+  --primary-bg: #4f2bee;
+  --primary-text: #FFFFFF;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -14,7 +19,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #4f2bee;
+  background-color: var(--primary-bg);
   cursor: pointer;
   transition: border-color 0.25s;
   color: white;

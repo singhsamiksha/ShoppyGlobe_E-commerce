@@ -1,17 +1,13 @@
 import { Link } from 'react-router-dom';
 import '../../stylesheets/Header.css';
+import AppLogo from './AppLogo';
 
 function Header() {
   return (
     <div className="header">
       <div className="logo">
         <Link to="/" className="nav-link">
-          <img
-            src="https://brandlogos.net/wp-content/uploads/2022/08/shop_pay-logo_brandlogos.net_tyf5p-512x512.png"
-            width="130px"
-            height="130px"
-            alt="Logo"
-          />
+          <AppLogo width={150} height={70} color="primary.main"/>
         </Link>
       </div>
       <div className="navbar">

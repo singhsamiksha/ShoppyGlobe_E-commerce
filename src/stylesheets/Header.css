@@ -2,15 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px;
-  margin: 0 50px;
-  height: auto;
-}
-
-/* Logo */
-.logo img {
-  max-width: 100%; /* Ensures the logo scales well */
-  height: auto; /* Maintains aspect ratio */
+  padding: 0 50px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
 }
 
 /* Navbar container */
@@ -21,15 +14,14 @@
 }
 
 /* Links */
-a {
+.navbar a {
   font-weight: 500;
-  color: #4f2bee;
+  color: var(--primary-bg);
   text-decoration: inherit;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-a:hover {
-  color: #4f2bee; /* Keeps the hover color */
+.navbar a:hover {
   text-decoration: underline;
   transform: translateY(-5px); /* Smooth upward hover effect */
 }
@@ -41,7 +33,6 @@ a:hover {
     flex-direction: column; /* Stacks the header vertically */
     align-items: center; /* Aligns items to the left */
     padding: 20px;
-    margin: 0 15px;
+    /* margin: 0 15px; */
   }
-
 }
