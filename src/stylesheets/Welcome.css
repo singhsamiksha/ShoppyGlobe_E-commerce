@@ -1,45 +1,53 @@
-.welcome_page {
-    background-image: url('../assets/banner3.jpg');
-    width: 100vw;
-    height: 553px;
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-    position: relative; 
-}
-
-.button {
-  position: absolute; 
-  right: 360px; 
-  bottom: 120px; 
-  display: flex; 
-  justify-content: center;
+.welcome-page {
+  background-image: url('../assets/banner3.jpg');
+  height: calc(100vh - 80px);
+  /* Adjusting for header */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-  
-  h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.overlay button {
+  position:absolute;
+  bottom: 10%;
+  right: 10%;
+  background-color: --var(--primary-bg);
+  color: white;
+  font-size: 1.5rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* .overlay button:hover {
+  background-color: #e65c00;
+} */
+
+@media screen and (max-width: 768px) {
+  .welcome-page {
+    height: 100vh;
+    /* Full screen on smaller devices */
   }
 
-  @media screen and (max-width: 1000px) {
-    .welcome_page {
-      height: 300px;
-    }
-  
-    .button {
-      right: 15%;
-      bottom: 15%;
-      flex-direction: column; /* Stack buttons vertically */
-    }
-  
-    h1 {
-      font-size: 1.5em;
-      text-align: center;
-    }
+  .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    /* Slightly darker for mobile readability */
   }
-  
-  
-  
+
+  .button button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+}

@@ -4,10 +4,10 @@ import '../stylesheets/Welcome.css';
 function Welcome() {
   return (
     <>
-      <div className="welcome_page">
-        <div className="button">
+      <div className="welcome-page">
+        <div className="overlay">
           <Link to="/products">
-            <button>Start Shopping</button>
+            <button className="appButton">Start Shopping</button>
           </Link>
         </div>
       </div>
